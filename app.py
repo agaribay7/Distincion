@@ -4,7 +4,7 @@ import DistincionVaronil
 import DistincionFemenil
 
 # Selector en la barra lateral para elegir la aplicación
-app_mode = st.sidebar.radio("Selecciona la aplicación:", ["Varonil", "Femenil"])
+app_mode = st.sidebar.radio("Selecciona el equipo:", ["Varonil", "Femenil"])
 
 if app_mode == "Varonil":
     DistincionVaronil.app()
