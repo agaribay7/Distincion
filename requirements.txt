@@ -1,3 +1,9 @@
 streamlit
 pandas
 altair
+plotly
+requests
+certifi
+gspread
+google-auth
+lxml
