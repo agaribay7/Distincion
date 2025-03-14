@@ -63,8 +63,7 @@ def scrape_and_update():
         "https://www.googleapis.com/auth/drive.file",
         "https://www.googleapis.com/auth/drive"
     ]
-    # Carga las credenciales desde st.secrets (asegúrate de tener la entrada "gcp_service_account")
-    creds = Credentials.from_service_account_info(st.secrets["gcp_service_account"], scopes=scope)
+    creds = Credentials.from_service_account_file("credenciales.json", scopes=scope)
     client = gspread.authorize(creds)
     sheet = client.open_by_url(GOOGLE_SHEET_EDIT_URL).worksheet(SHEET_NAME)
     
