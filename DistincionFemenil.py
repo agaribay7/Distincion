@@ -101,7 +101,7 @@ def app():
     styled_df = styled_df.set_properties(subset=["Total PJ"], **{'text-align': 'left'})
 
     # Mostrar la tabla de datos con scroll
-    st.subheader("Tabla de Partidos Jugados")
+    st.markdown('<p class="sub-title">Tabla de Partidos Jugados</p>', unsafe_allow_html=True)
     st.dataframe(styled_df, height=390, width=800)
 
     # Sección de Alertas
