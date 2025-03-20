@@ -48,7 +48,7 @@ def load_data(url):
     return df
 
 def app():
-    st.markdown('<p class="main-title">Seguimiento de Partidos</p>', unsafe_allow_html=True)
+    st.title("Seguimiento de Partidos")
     
     # Botón para actualizar datos desde Google Sheets
     if st.sidebar.button("Actualizar datos"):
@@ -120,7 +120,7 @@ def app():
     st.markdown('<p class="sub-title">Tabla de Partidos Jugados</p>', unsafe_allow_html=True)
     st.dataframe(styled_df, height=390, width=800)
     
-    st.markdown('<p class="sub-title">Alertas</p>', unsafe_allow_html=True)
+    st.subheader("Alertas")
     with st.container():
         for index, row in df_alerts.iterrows():
             level = alert_level(row["Total PJ"])
@@ -136,7 +136,7 @@ def app():
                 elif level == 1:
                     st.info(f"{row['Nombre']} está a {missing} partidos de alcanzar {next_milestone} partidos (actual: {total}).")
     
-    st.markdown('<p class="sub-title">Evolución de Partidos</p>', unsafe_allow_html=True)
+    st.subheader("Evolución de Partidos")
     df_chart = df.copy()
     df_chart['alert'] = df_chart['Total PJ'].apply(is_alert)
     chart = alt.Chart(df_chart).mark_bar().encode(
