@@ -16,7 +16,6 @@ def app():
         return df
 
     # Sidebar para filtros y actualización
-    st.sidebar.header("Filtros")
     if st.sidebar.button("Actualizar datos", key="actualizar_datos2"):
         load_data.clear()  # Limpia la caché de la función load_data
         try:
